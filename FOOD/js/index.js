@@ -13,10 +13,24 @@ window.addEventListener('DOMContentLoaded', () => {
 
     tabs('.tabheader__item', '.tabcontent', '.tabheader__items', 'tabheader__item_active');
     modal('[data-modal]', '.modal', modalTimerId);
-    timer('.timer', '2023-07-12');
+    timer('.timer', '2023-06-12');
     cards();
     calc();
     forms('form', modalTimerId);
-    slider();
+    slider({
+        container: '.offer__slider',
+        slide: '.offer__slide',
+        nextArrow: '.offer__slider-next',
+        prevArrow: '.offer__slider-prev',
+        totalCounter: '#total',
+        currentCounter: '#current',
+        wrapper: '.offer__slider-wrapper',
+        field: '.offer__slider-inner'
+    });
+
+document.querySelector('.header__logo').addEventListener('click', () => {
+    location.reload(); 
+    return false;
+});
 
 }); 
